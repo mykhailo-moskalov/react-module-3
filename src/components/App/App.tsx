@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { ColorRing } from "react-loader-spinner";
 import { fetchArticles } from "../../services/articleService";
 import type { Article } from "../../types/article";
 import SearchForm from "../SearchForm/SearchForm";
@@ -16,6 +15,7 @@ import Timer from "../Timer/Timer";
 import Modal from "../Modal/Modal";
 import Clicker from "../Clicker/Clicker";
 import EffectAsyncAwait from "../EffectAsyncAwait/EffectAsyncAwait";
+import { RingLoader } from "react-spinners";
 
 export default function App() {
   const [articles, setArticles] = useState<Article[]>([]);
@@ -51,13 +51,7 @@ export default function App() {
   return (
     <>
       <SearchForm onSubmit={handleSearch} />
-      {isLoading && (
-        <ColorRing
-          height="100"
-          width="100"
-          colors={["#2a2a2a", "#585858ff", "#afafaf", "#9f9f9f", "#8c8c8c"]}
-        />
-      )}
+      {isLoading && <RingLoader size="100" color="#585858ff" />}
       {isError && <p>Whoops, something went wrong! Please try again!</p>}
       {articles.length > 0 && <ArticleList items={articles} />}
       <br />
