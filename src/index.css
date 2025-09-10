@@ -25,10 +25,52 @@ a {
 
 button {
   cursor: pointer;
+  border: none;
+  transition: all 150ms ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+input,
+form,
+button {
+  padding: 8px;
+  background-color: transparent;
+}
+
+.search-results {
+  padding: 32px;
+  max-width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style-type: circle;
+}
+
+body {
+  transition: all 150ms ease-in-out;
+}
+
+body.theme-dark {
+  background-color: rgb(56, 56, 56);
+  color: white;
+}
+body.theme-light {
+  background-color: white;
+  color: rgb(56, 56, 56);
+}
+
+body.theme-dark button {
+  background-color: white;
+}
+body.theme-light button {
+  background-color: rgb(187, 187, 187);
 }
