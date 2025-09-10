@@ -4,10 +4,10 @@ import { fetchArticles } from "../../services/articleService";
 import type { Article } from "../../types/article";
 import SearchForm from "../SearchForm/SearchForm";
 import ArticleList from "../ArticleList/ArticleList";
-// import FormID from "../FormID/FormID";
-// import FormRadio from "../FormRadio/FormRadio";
-// import FormChekbox from "../FormCheckbox/FormCheckbox";
-// import FormSelect from "../FormSelect/FormSelect";
+import FormID from "../FormID/FormID";
+import FormRadio from "../FormRadio/FormRadio";
+import FormChekbox from "../FormCheckbox/FormCheckbox";
+import FormSelect from "../FormSelect/FormSelect";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import "./App.module.css";
 import { deployThemeToggle } from "../../theme";
@@ -15,7 +15,7 @@ import { RiMoonFill, RiSunFill } from "react-icons/ri";
 import Timer from "../Timer/Timer";
 import Modal from "../Modal/Modal";
 import Clicker from "../Clicker/Clicker";
-// import EffectAsyncAwait from "../EffectAsyncAwait/EffectAsyncAwait";
+import EffectAsyncAwait from "../EffectAsyncAwait/EffectAsyncAwait";
 
 export default function App() {
   const [articles, setArticles] = useState<Article[]>([]);
@@ -63,11 +63,11 @@ export default function App() {
       <br />
       <br />
       <br />
-      {/* <FormID />
+      <FormID />
       <FormRadio />
       <FormChekbox />
-      <FormSelect /> */}
-      {/* <EffectAsyncAwait /> */}
+      <FormSelect />
+      <EffectAsyncAwait />
       <button onClick={() => setIsTimerOpen(!isTimerOpen)}>
         {isTimerOpen ? "Hide timer" : "Show timer"}
       </button>
